@@ -1,54 +1,36 @@
-# Astro Starter Kit: Basics
+# Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+## About Me
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+I'm a full-stack developer deeply passionate about JavaScript. I thrive on crafting applications that not only streamline tasks but also inject a bit of enjoyment into everyday life. Whether it's sculpting a polished frontend using React or harnessing the power of Node.js to tame servers, I'm your dedicated code wrangler. With two years of industrial experience under my belt, I'm excited to collaborate and bring our shared vision to life. Let's embark on the journey of creating something truly awesome together!
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Projects
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+### 1. CouponLap
+- **Description:** Built with Next.js 14, Supabase, Cloudinary, and PostgreSQL.
+- **Live Link:** [CouponLap](https://couponlap.in/)
 
-## 🚀 Project Structure
+### 2. Admin Dashboard
+- **Description:** Next.js 14, Vercel, PostgreSQL, Server Actions.
+- **Live Link:** [Admin Dashboard](https://nextjs-admin-dashboard-alpha.vercel.app/)
+- **GitHub:** [Repository](https://github.com/Akshaygore1/nextjsAdminDashboard)
 
-Inside of your Astro project, you'll see the following folders and files:
+### 3. Cryptoowl
+- **Description:** Developed using React, Material UI, CoinGecko API, and Context API.
+- **Live Link:** [Cryptoowl](https://cryptoowl.netlify.app/)
+- **GitHub:** [Repository](https://github.com/Akshaygore1/Crypto-Owl)
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+### 4. E-Commerce CMS
+- **Description:** Next.js 14, PlanetScale, Prisma, Zustand.
+- **Live Link:** [E-Commerce CMS](https://storemanagerhub.vercel.app)
+- **GitHub:** [Repository](https://github.com/Akshaygore1/Crypto-Owl)
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### 5. E-Commerce
+- **Description:** Next.js 14, PlanetScale, Prisma, Zustand.
+- **Live Link:** [E-Commerce](https://myecommerceshop.vercel.app/)
+- **GitHub:** [Repository](https://github.com/Akshaygore1/Next-Js-Ecommerce/tree/main/store)
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### 6. Restaurant Website
+- **Description:** Using HTML, CSS, JavaScript.
+- **Live Link:** [Restaurant Website](https://myrestraurant.netlify.app/)
+- **GitHub:** [Repository](https://github.com/Akshaygore1/Restraurant-Website)
