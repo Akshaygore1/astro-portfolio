@@ -1,0 +1,164 @@
+---
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import Javascript from '../../public/javascript.svg';
+import RoundedChip from '../components/RoundedChip.astro';
+import { Icon } from 'astro-icon/components';
+const skills = [
+	{ label: 'JavaScript', icon: 'javascript' },
+	{ label: 'TypeScript', icon: 'typescript' },
+	{ label: 'React', icon: 'react' },
+	{ label: 'Next.js', icon: 'nextjs' },
+	{ label: 'Node.js', icon: 'nodejs' },
+	{ label: 'GraphQL', icon: 'graphql' },
+	{ label: 'Docker', icon: 'docker' },
+	{ label: 'AWS', icon: 'aws' },
+	{ label: 'Kubernetes', icon: 'kubernetes' },
+	{ label: 'PostgreSQL', icon: 'postgresql' },
+	{ label: 'MongoDB', icon: 'database' },
+	{ label: 'MySQL', icon: 'database' },
+	{ label: 'Redis', icon: 'redis' },
+	{ label: 'Kafka', icon: 'kafka' },
+];
+
+const socialLinks = [
+	{
+		label: 'Github',
+		link: 'https://github.com/Akshaygore1',
+	},
+	{
+		label: 'Twitter',
+		link: 'https://x.com/akshaydev_ai',
+	},
+	{
+		label: 'LinkedIn',
+		link: 'https://www.linkedin.com/in/akshaygore2301/',
+	},
+	{
+		label: 'Email',
+		link: 'mailto:backslash.flutter@gmail.com',
+	},
+];
+---
+
+<Layout title='Akshay Gore'>
+	<main>
+		<div class='container'>
+			<div class='headerContainer'>
+				<Header title="Hey, I'm Akshay" icon='👋' />
+			</div>
+			<p>
+				As a full-stack developer deeply passionate about JavaScript, I thrive
+				on crafting applications that not only streamline tasks but also inject
+				a bit of enjoyment into everyday life. Whether it's sculpting a polished
+				frontend using React or harnessing the power of Node.js to tame servers,
+				I'm your dedicated code wrangler. With two years of industrial
+				experience under my belt, I'm excited to collaborate and bring our
+				shared vision to life. Let's embark on the journey of creating something
+				truly awesome together!
+			</p>
+
+			<div class='socials'>
+				{
+					socialLinks.map((link) => (
+						<a href={link.link} target='_blank' rel='noopener noreferrer'>
+							{link.label}
+						</a>
+					))
+				}
+			</div>
+			<div class='headerContainer'>
+				<Header title='Experience' icon='💼' />
+			</div>
+			<div class='experience'>
+				<p>
+					I work at Zeliot as a full-stack developer, where I've accumulated 2
+					years of valuable experience. During my time at Zeliot, I've been
+					involved in numerous projects, demonstrating my proficiency across
+					various domains. My responsibilities have included:
+				</p>
+				<ul>
+					<li>
+						Developing and maintaining production-grade services using Node.js,
+						GraphQL, and REST APIs.
+					</li>
+					<li>Architecting scalable services with Node.js.</li>
+					<li>Crafting intuitive user interfaces with React.</li>
+					<li>
+						Integrating artificial intelligence technologies, enriching our
+						applications with customizable data functionalities powered by
+						Node.js.
+					</li>
+					<li>
+						Leading teams and successfully managing multiple projects
+						simultaneously.
+					</li>
+				</ul>
+				<p>
+					My experience at Zeliot has not only sharpened my technical skills but
+					also honed my ability to collaborate effectively and deliver
+					high-quality solutions.
+				</p>
+			</div>
+
+			<div class='headerContainer'>
+				<Header title='Skills' icon='⚙️' />
+			</div>
+			<div class='skillsContainer'>
+				{
+					skills.map((skill) => (
+						<RoundedChip label={skill.label} icon={skill.icon} />
+					))
+				}
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		padding-top: 16px;
+		gap: 16px;
+	}
+	.headerContainer {
+		padding: 16px 0;
+	}
+	p {
+		font-size: 16px;
+		line-height: 1.6;
+	}
+	.skillsContainer {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+	ul {
+		margin: 0;
+		/* padding: 0; */
+		list-style-type: square;
+		font-size: 14px;
+		line-height: 1.6;
+	}
+	.socials {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+	a {
+		color: inherit;
+		text-decoration: underline;
+		font-size: 14px;
+		line-height: 1.6;
+	}
+</style>

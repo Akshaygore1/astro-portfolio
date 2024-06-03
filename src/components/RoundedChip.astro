@@ -1,0 +1,65 @@
+---
+interface Props {
+	label: string;
+	icon?: string;
+	link?: string;
+}
+const { label, icon, link } = Astro.props;
+
+import { Icon } from 'astro-icon/components';
+---
+
+<div class='chip'>
+	{
+		link ? (
+			<a
+				href={link}
+				class='chip-link'
+				target='_blank'
+				rel='noopener noreferrer'
+			>
+				{icon && <Icon name={icon} width={16} height={16} />}
+				{label}
+			</a>
+		) : (
+			<>
+				{icon && <Icon name={icon} width={16} height={16} />}
+				{label}
+			</>
+		)
+	}
+</div>
+
+<style>
+	.chip {
+		display: inline-flex;
+		align-items: center;
+		background-color: #262626;
+		border: 0.5px solid #a3a3a3;
+		border-radius: 0.25rem;
+		color: #ffffff;
+		padding: 0.25rem 0.75rem;
+		font-size: 0.75rem;
+		margin: 0.25rem;
+		text-transform: capitalize;
+		gap: 0.25rem;
+	}
+
+	.chip-link {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.chip-link:hover,
+	.chip-link:focus {
+		text-decoration: underline;
+		outline: none;
+	}
+
+	.chip-icon {
+		margin-right: 0.25rem;
+	}
+</style>
