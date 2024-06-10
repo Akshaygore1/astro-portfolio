@@ -6,6 +6,7 @@ type Post = {
 	title: string;
 	slug: string;
 	brief: string;
+	publishedAt: string;
 	coverImage: {
 		url: string;
 	} | null;
@@ -33,6 +34,7 @@ const response = await fetch('https://gql.hashnode.com/', {
                             title
                             slug
                             brief
+							publishedAt
                             coverImage {
                                 url
                             }
@@ -43,6 +45,31 @@ const response = await fetch('https://gql.hashnode.com/', {
         `,
 	}),
 });
+
+function convertDate(timestamp: string) {
+	const date = new Date(timestamp);
+
+	const monthNames = [
+		'January',
+		'February',
+		'March',
+		'April',
+		'May',
+		'June',
+		'July',
+		'August',
+		'September',
+		'October',
+		'November',
+		'December',
+	];
+
+	const day = date.getUTCDate();
+	const month = monthNames[date.getUTCMonth()];
+	const year = date.getUTCFullYear();
+
+	return `${month} ${day} ${year}`;
+}
 
 const result = await response.json();
 
@@ -57,9 +84,11 @@ const userData: UserData = result.data.user;
 		{
 			userData.posts.nodes.map((post: Post) => (
 				<div class='post'>
-					<div class='title'>{post.title}</div>
+					<a href={'https://akshaygore.hashnode.dev/' + post.slug}>
+						<div class='title'>{post.title}</div>
+					</a>
 					<div class='link'>
-						<a href={'https://akshaygore.hashnode.dev/' + post.slug}>Read</a>
+						<div>{convertDate(post.publishedAt)}</div>
 					</div>
 				</div>
 			))
@@ -109,7 +138,6 @@ const userData: UserData = result.data.user;
 	}
 	a {
 		color: inherit;
-		text-decoration: underline;
 		font-size: 14px;
 	}
 </style>
