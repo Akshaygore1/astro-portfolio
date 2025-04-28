@@ -1,36 +1,54 @@
-# Portfolio
+# React + TypeScript + Vite
 
-## About Me
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-I'm a full-stack developer deeply passionate about JavaScript. I thrive on crafting applications that not only streamline tasks but also inject a bit of enjoyment into everyday life. Whether it's sculpting a polished frontend using React or harnessing the power of Node.js to tame servers, I'm your dedicated code wrangler. With two years of industrial experience under my belt, I'm excited to collaborate and bring our shared vision to life. Let's embark on the journey of creating something truly awesome together!
+Currently, two official plugins are available:
 
-## Projects
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### 1. CouponLap
-- **Description:** Built with Next.js 14, Supabase, Cloudinary, and PostgreSQL.
-- **Live Link:** [CouponLap](https://couponlap.in/)
+## Expanding the ESLint configuration
 
-### 2. Admin Dashboard
-- **Description:** Next.js 14, Vercel, PostgreSQL, Server Actions.
-- **Live Link:** [Admin Dashboard](https://nextjs-admin-dashboard-alpha.vercel.app/)
-- **GitHub:** [Repository](https://github.com/Akshaygore1/nextjsAdminDashboard)
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-### 3. Cryptoowl
-- **Description:** Developed using React, Material UI, CoinGecko API, and Context API.
-- **Live Link:** [Cryptoowl](https://cryptoowl.netlify.app/)
-- **GitHub:** [Repository](https://github.com/Akshaygore1/Crypto-Owl)
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-### 4. E-Commerce CMS
-- **Description:** Next.js 14, PlanetScale, Prisma, Zustand.
-- **Live Link:** [E-Commerce CMS](https://storemanagerhub.vercel.app)
-- **GitHub:** [Repository](https://github.com/Akshaygore1/Crypto-Owl)
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-### 5. E-Commerce
-- **Description:** Next.js 14, PlanetScale, Prisma, Zustand.
-- **Live Link:** [E-Commerce](https://myecommerceshop.vercel.app/)
-- **GitHub:** [Repository](https://github.com/Akshaygore1/Next-Js-Ecommerce/tree/main/store)
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-### 6. Restaurant Website
-- **Description:** Using HTML, CSS, JavaScript.
-- **Live Link:** [Restaurant Website](https://myrestraurant.netlify.app/)
-- **GitHub:** [Repository](https://github.com/Akshaygore1/Restraurant-Website)
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```
