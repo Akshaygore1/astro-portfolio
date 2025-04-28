@@ -1,5 +1,4 @@
 import LinkComponent from "../components/LinkComponent";
-import { Metadata } from "../components/Metadata";
 import { links, projects } from "../../data";
 
 const experiences = [
@@ -18,10 +17,6 @@ const experiences = [
 export function Home() {
   return (
     <>
-      <Metadata
-        title="Akshay Gore | Full Stack Developer"
-        description="Full Stack Developer passionate about building scalable applications and contributing to open source. Love to build and contribute."
-      />
       <div className="max-w-2xl mx-auto flex flex-col gap-8">
         <h1 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100">
           hey, I'm Akshay Gore 👋
