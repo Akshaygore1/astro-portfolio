@@ -21,7 +21,7 @@ export function Home() {
         <h1 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100">
           hey, I'm Akshay Gore 👋
         </h1>
-        <div className="flex flex-col gap-4 pb-6">
+        <div className="flex flex-col gap-4 pb-4">
           <p className="text-md">
             I'm a Full Stack Developer with 3 years of industry experience,
             passionate about building scalable and efficient web applications.
@@ -39,7 +39,7 @@ export function Home() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-4 pb-6">
+        <div className="flex flex-col gap-4 pb-4">
           <h2 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">
             currently working on 🛠️
           </h2>
