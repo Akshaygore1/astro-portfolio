@@ -40,7 +40,7 @@ export function Home() {
           <div className="flex flex-col gap-4">
             {projects.map((project) => (
               <div key={project.name}>
-                <div className="text-lg font-medium">{project.name}</div>
+                <div className="text-md font-light">{project.name}</div>
                 <div className="text-sm py-2 text-zinc-500">
                   {project.description}
                 </div>
@@ -64,7 +64,7 @@ export function Home() {
           <div className="flex flex-col gap-4">
             {experiences.map((exp, index) => (
               <li key={index} className="flex justify-between">
-                <span className="font-medium">{exp.company}</span>
+                <span className="text-md font-medium">{exp.company}</span>
                 <span className="text-sm">
                   {exp.from} - {exp.to}
                 </span>
