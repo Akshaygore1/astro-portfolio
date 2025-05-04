@@ -17,7 +17,7 @@ const experiences = [
 export function Home() {
   return (
     <>
-      <div className="max-w-xl mx-auto flex flex-col gap-8">
+      <div className="max-w-lg mx-auto flex flex-col gap-8">
         <h1 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100">
           hey, I'm Akshay Gore 👋
         </h1>

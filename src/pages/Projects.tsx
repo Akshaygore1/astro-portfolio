@@ -3,7 +3,7 @@ import LinkComponent from "../components/LinkComponent";
 
 export function Projects() {
   return (
-    <div className="max-w-xl mx-auto">
+    <div className="max-w-lg mx-auto">
       <div className="flex flex-col gap-8">
         <h1 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100">
           my projects

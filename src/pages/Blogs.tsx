@@ -95,7 +95,7 @@ export function Blog() {
 
   if (loading) {
     return (
-      <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-lg mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8">
           <h1 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100">
             Loading posts...
@@ -107,7 +107,7 @@ export function Blog() {
 
   if (error) {
     return (
-      <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-lg mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8">
           <h1 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100">
             Error
@@ -120,7 +120,7 @@ export function Blog() {
 
   if (!data?.user.posts.nodes.length) {
     return (
-      <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-lg mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8">
           <h1 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100">
             No posts found
@@ -131,7 +131,7 @@ export function Blog() {
   }
 
   return (
-    <div className="max-w-xl mx-auto">
+    <div className="max-w-lg mx-auto">
       <div className="flex flex-col gap-8">
         <h1 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100">
           Blog Posts

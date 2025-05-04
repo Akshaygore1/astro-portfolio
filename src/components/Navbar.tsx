@@ -19,7 +19,7 @@ const links = [
 export function Navbar() {
   return (
     <nav className="py-6 dark:text-neutral-100">
-      <div className="max-w-xl mx-auto flex justify-between items-center">
+      <div className="max-w-lg mx-auto flex justify-between items-center">
         <div className="flex gap-4">
           {links.map((link) => (
             <Link key={link.href} to={link.href} className="text-lg">
