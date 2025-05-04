@@ -17,18 +17,12 @@ const experiences = [
 export function Home() {
   return (
     <>
-      <div className="max-w-2xl mx-auto flex flex-col gap-8">
+      <div className="max-w-xl mx-auto flex flex-col gap-8">
         <h1 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100">
           hey, I'm Akshay Gore 👋
         </h1>
-        <div className="flex flex-col gap-4 pb-4">
-          <p className="text-md">
-            I'm a Full Stack Developer with 3 years of industry experience,
-            passionate about building scalable and efficient web applications.
-            Beyond work, I actively contribute to open-source projects and enjoy
-            building side projects on weekends to sharpen my skills and explore
-            new technologies.
-          </p>
+        <div className="flex flex-col gap-2 pb-4">
+          <p className="text-md">Building Softwares for browsers</p>
           <div className="flex flex-row gap-2 items-center">
             {links.map((link) => (
               <LinkComponent
@@ -47,7 +41,9 @@ export function Home() {
             {projects.map((project) => (
               <div key={project.name}>
                 <div className="text-lg font-medium">{project.name}</div>
-                <div className="text-sm">{project.description}</div>
+                <div className="text-sm py-2 text-zinc-500">
+                  {project.description}
+                </div>
                 <div className="flex flex-row gap-2">
                   {project.links.map((link) => (
                     <LinkComponent
