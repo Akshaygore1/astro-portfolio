@@ -9,7 +9,7 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
-        <div className="min-h-screen  p-4 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300">
+        <div className="min-h-screen p-4 dark:bg-[#090A0B] dark:text-[#BBBBBB]">
           <Navbar />
           <main className="pt-8">
             <Routes>

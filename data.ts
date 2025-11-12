@@ -1,14 +1,14 @@
 export const links = [
   {
-    href: "https://github.com/Akshaygore1",
+    href: "https://git.new/akshay",
     label: "github",
   },
   {
-    href: "https://www.linkedin.com/in/akshaygore2301/",
+    href: "https://dub.sh/iJCauRp",
     label: "linkedin",
   },
   {
-    href: "https://x.com/akshaygore2301",
+    href: "https://dub.sh/akshaytweet",
     label: "twitter",
   },
   {

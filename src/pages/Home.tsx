@@ -1,28 +1,60 @@
 import LinkComponent from "../components/LinkComponent";
-import { links, projects } from "../../data";
+import { links } from "../../data";
 
+const skills = [
+  "Next.js",
+  "React.js",
+  "Node.js",
+  "Docker",
+  "Kubernetes",
+  "Cloud",
+  "PostgreSQL",
+  "ClickHouse",
+  "GenAI",
+];
 const experiences = [
-  {
-    company: "Zeliot",
-    from: "April 2022",
-    to: "Dec 2024",
-  },
   {
     company: "ABBYY",
     from: "Dec 2024",
     to: "Present",
+    position: "Software Engineer 2",
+  },
+  {
+    company: "Zeliot",
+    from: "April 2022",
+    to: "Dec 2024",
+    position: "Software Engineer",
   },
 ];
+
+// ✅ Skill chip component
+const SkillChip = ({ name }: { name: string }) => {
+  return (
+    <span className="px-3 py-1 rounded-full text-sm font-medium border transition-all duration-200 hover:scale-105">
+      {name}
+    </span>
+  );
+};
 
 export function Home() {
   return (
     <>
-      <div className="max-w-lg mx-auto flex flex-col gap-8">
-        <h1 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100">
-          hey, I'm Akshay Gore 👋
-        </h1>
-        <div className="flex flex-col gap-2 pb-4">
-          <p className="text-md">Building Softwares for browsers</p>
+      <div className="max-w-lg mx-auto flex flex-col gap-4">
+        <div className="w-full min-h-20"></div>
+        <div>
+          <h1 className="text-xl font-medium dark:text-gray-50">
+            hey, I'm Akshay Gore 👋
+          </h1>
+          <p className="text-md py-1">Building Softwares for browsers</p>
+        </div>
+        <div className="flex flex-col pb-4">
+          <p className="text-md">
+            Full-stack engineer with 4 years of experience building enterprise
+            and SaaS products. I specialize in scalable data systems, analytics
+            platforms, and AI-driven applications, with strong expertise across
+            frontend, backend, and DevOps. Currently exploring how to make
+            software more intelligent through AI-native design.
+          </p>
           <div className="flex flex-row gap-2 items-center">
             {links.map((link) => (
               <LinkComponent
@@ -35,38 +67,24 @@ export function Home() {
         </div>
         <div className="flex flex-col gap-4 pb-4">
           <h2 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">
-            currently working on 🛠️
+            Skills
           </h2>
-          <div className="flex flex-col gap-4">
-            {projects.map((project) => (
-              <div key={project.name}>
-                <div className="text-md font-light">{project.name}</div>
-                <div className="text-sm py-2 text-zinc-500">
-                  {project.description}
-                </div>
-                <div className="flex flex-row gap-2">
-                  {project.links.map((link) => (
-                    <LinkComponent
-                      key={link.href}
-                      href={link.href}
-                      label={link.label}
-                    />
-                  ))}
-                </div>
-              </div>
+          <div className="flex flex-wrap gap-3">
+            {skills.map((skill) => (
+              <SkillChip key={skill} name={skill} />
             ))}
           </div>
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">
-            Experience 💼
+            Experience
           </h2>
           <div className="flex flex-col gap-4">
             {experiences.map((exp, index) => (
-              <li key={index} className="flex justify-between">
+              <li key={index} className="flex gap-1 flex-col">
                 <span className="text-md font-medium">{exp.company}</span>
                 <span className="text-sm">
-                  {exp.from} - {exp.to}
+                  {exp.position}, {exp.from} - {exp.to}
                 </span>
               </li>
             ))}
