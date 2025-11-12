@@ -40,7 +40,7 @@ export function Home() {
   return (
     <>
       <div className="max-w-lg mx-auto flex flex-col gap-4">
-        <div className="w-full min-h-20"></div>
+        <div className="w-full min-h-10"></div>
         <div>
           <h1 className="text-xl font-medium dark:text-gray-50">
             hey, I'm Akshay Gore 👋
