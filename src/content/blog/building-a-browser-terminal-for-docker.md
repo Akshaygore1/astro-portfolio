@@ -4,6 +4,9 @@ description: "Learn how to build an interactive terminal experience using Docker
 pubDate: 2024-06-15
 author: "Akshay Gore"
 tags: ["docker", "node.js", "terminal", "socket.io"]
+image:
+  url: "https://cdn.hashnode.com/res/hashnode/image/upload/v1727614999048/2a86c095-9ca7-4663-99d8-5114f411903b.png"
+  alt: "A screenshot of the browser terminal interface for Docker"
 ---
 
 I've been diving into Docker and exploring ways to create interactive terminal experiences. I experimented by combining Docker and Node.js to build a virtual playground within a container. This playground provides a terminal interface where you can access files and experiment with the container's environment. It's essentially a sandbox for practicing commands and interacting directly with the container's system.

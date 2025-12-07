@@ -9,6 +9,10 @@ interface Props {
     pubDate: Date;
     author?: string;
     tags?: string[];
+    image?: {
+      url: string;
+      alt: string;
+    };
   };
 }
 
@@ -39,6 +43,15 @@ function formatDate(date: Date): string {
         <h1 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
           {frontmatter.title}
         </h1>
+        {frontmatter.image && (
+          <div class="py-8">
+          <img
+            src={frontmatter.image.url}
+            alt={frontmatter.image.alt}
+            class="w-full object-cover rounded-lg"
+          />
+          </div>
+        )}
         <div class="flex items-center gap-4 text-sm text-zinc-500 dark:text-zinc-400">
           <time datetime={frontmatter.pubDate.toISOString()}>
             {formatDate(frontmatter.pubDate)}
