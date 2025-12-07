@@ -5,7 +5,7 @@ pubDate: 2024-06-15
 author: "Akshay Gore"
 tags: ["docker", "node.js", "terminal", "socket.io"]
 image:
-  url: "https://cdn.hashnode.com/res/hashnode/image/upload/v1727614999048/2a86c095-9ca7-4663-99d8-5114f411903b.png"
+  url: "https://pub-787f86ca67424ee9bb7d256ad6da8565.r2.dev/docker.webp"
   alt: "A screenshot of the browser terminal interface for Docker"
 ---
 

@@ -5,7 +5,7 @@ pubDate: 2024-06-15
 author: "Akshay Gore"
 tags: ["node.js", "cli", "npm", "chalk", "figlet"]
 image:
-  url: "https://cdn.hashnode.com/res/hashnode/image/upload/v1709369073702/4640e0e5-4c4c-42e8-86a4-0e40dc272eff.png"
+  url: "https://pub-787f86ca67424ee9bb7d256ad6da8565.r2.dev/terminal.webp"
   alt: "A screenshot of Creating a Node.js CLI and Publishing It"
 ---
 

@@ -5,7 +5,7 @@ pubDate: 2024-06-15
 author: "Akshay Gore"
 tags: ["node.js", "typescript", "express", "redis", "rate-limiting", "api"]
 image:
-  url: "https://cdn.hashnode.com/res/hashnode/image/upload/v1710698601762/de352b46-e8c9-45c1-8640-0abbde119864.png"
+  url: "https://pub-787f86ca67424ee9bb7d256ad6da8565.r2.dev/rate-limit.webp"
   alt: "A screenshot Redis‑Based Rate Limiting in Node.js"
 ---
 
