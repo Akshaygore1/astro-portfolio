@@ -1,0 +1,34 @@
+---
+const currentPath = Astro.url.pathname;
+
+const links = [
+  { label: 'home', href: '/' },
+  { label: 'blogs', href: '/blog' },
+  { label: 'projects', href: '/projects' },
+];
+
+function isActive(href: string, currentPath: string): boolean {
+  if (href === '/') {
+    return currentPath === '/';
+  }
+  return currentPath.startsWith(href);
+}
+---
+
+<nav class="py-6 dark:text-neutral-100">
+  <div class="max-w-lg mx-auto flex justify-between items-center">
+    <div class="flex gap-4">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            'text-lg transition-all duration-150 ease-[cubic-bezier(0.08,0.82,0.17,1)]',
+            isActive(link.href, currentPath) && 'underline decoration-amber-400 decoration-wavy underline-offset-4 hover:text-foreground'
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>

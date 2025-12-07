@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import LinkComponent from '../components/LinkComponent.astro';
+import { allProjects } from '../../data';
+---
+
+<BaseLayout title="Projects | Akshay Gore" description="Check out my open source projects and side projects.">
+  <Navbar />
+  <main class="pt-8">
+    <div class="max-w-lg mx-auto">
+      <div class="flex flex-col gap-8">
+        <h1 class="text-2xl font-medium text-zinc-900 dark:text-zinc-100">
+          my projects
+        </h1>
+        {allProjects.map((project) => (
+          <div>
+            <h2 class="text-lg font-medium text-zinc-900 dark:text-zinc-100">{project.name}</h2>
+            <LinkComponent href={project.gitHubUrl} label="github" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+</BaseLayout>

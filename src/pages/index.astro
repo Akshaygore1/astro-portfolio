@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import LinkComponent from '../components/LinkComponent.astro';
+import { links } from '../../data';
+
+const skills = [
+  'Next.js',
+  'React.js',
+  'Node.js',
+  'Docker',
+  'Kubernetes',
+  'Cloud',
+  'PostgreSQL',
+  'ClickHouse',
+  'GenAI',
+];
+
+const experiences = [
+  {
+    company: 'ABBYY',
+    from: 'Dec 2024',
+    to: 'Present',
+    position: 'Software Engineer 2',
+  },
+  {
+    company: 'Zeliot',
+    from: 'April 2022',
+    to: 'Dec 2024',
+    position: 'Software Engineer',
+  },
+];
+---
+
+<BaseLayout>
+  <Navbar />
+  <main class="pt-8">
+    <div class="max-w-lg mx-auto flex flex-col gap-4">
+      <div class="w-full min-h-10"></div>
+      <div>
+        <h1 class="text-xl font-medium dark:text-gray-50">
+          hey, I'm Akshay Gore 👋
+        </h1>
+        <p class="text-md py-1">Writing Code for browsers and servers</p>
+      </div>
+      <div class="flex flex-col pb-4">
+        <p class="text-md">
+          Full-stack engineer with 4 years of experience building enterprise
+          and SaaS products. I specialize in scalable data systems, analytics
+          platforms, and AI-driven applications, with strong expertise across
+          frontend, backend, and DevOps. Currently exploring how to make
+          software more intelligent through AI-native design.
+        </p>
+        <div class="flex flex-row gap-2 items-center">
+          {links.map((link) => (
+            <LinkComponent href={link.href} label={link.label} />
+          ))}
+        </div>
+      </div>
+      <div class="flex flex-col gap-4 pb-4">
+        <h2 class="text-xl font-medium text-zinc-900 dark:text-zinc-100">
+          Skills
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          {skills.map((skill) => (
+            <span class="px-3 py-1 rounded-full text-sm font-medium border transition-all duration-200 hover:scale-105">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h2 class="text-xl font-medium text-zinc-900 dark:text-zinc-100">
+          Experience
+        </h2>
+        <div class="flex flex-col gap-4">
+          {experiences.map((exp) => (
+            <li class="flex gap-1 flex-col list-none">
+              <span class="text-md font-medium">{exp.company}</span>
+              <span class="text-sm">
+                {exp.position}, {exp.from} - {exp.to}
+              </span>
+            </li>
+          ))}
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

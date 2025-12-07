@@ -1,0 +1,135 @@
+---
+import Navbar from '../components/Navbar.astro';
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+    pubDate: Date;
+    author?: string;
+    tags?: string[];
+  };
+}
+
+const { frontmatter } = Astro.props;
+
+function formatDate(date: Date): string {
+  const monthNames = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+  const day = date.getUTCDate();
+  const month = monthNames[date.getUTCMonth()];
+  const year = date.getUTCFullYear();
+  return `${month} ${day}, ${year}`;
+}
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <div class="max-w-2xl mx-auto py-8">
+    <article class="prose prose-zinc dark:prose-invert max-w-none">
+      <header class="mb-8 not-prose">
+        <a
+          href="/blog"
+          class="text-sm text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 mb-4 inline-block"
+        >
+          ← Back to blog
+        </a>
+        <h1 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+          {frontmatter.title}
+        </h1>
+        <div class="flex items-center gap-4 text-sm text-zinc-500 dark:text-zinc-400">
+          <time datetime={frontmatter.pubDate.toISOString()}>
+            {formatDate(frontmatter.pubDate)}
+          </time>
+          {frontmatter.author && (
+            <span>by {frontmatter.author}</span>
+          )}
+        </div>
+        {frontmatter.tags && frontmatter.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-4">
+            {frontmatter.tags.map((tag) => (
+              <span class="px-2 py-1 text-xs rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </header>
+      <div class="blog-content">
+        <slot />
+      </div>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .blog-content :global(h1),
+  .blog-content :global(h2),
+  .blog-content :global(h3),
+  .blog-content :global(h4) {
+    @apply text-zinc-900 dark:text-zinc-100 font-semibold mt-8 mb-4;
+  }
+
+  .blog-content :global(h1) {
+    @apply text-2xl;
+  }
+
+  .blog-content :global(h2) {
+    @apply text-xl;
+  }
+
+  .blog-content :global(h3) {
+    @apply text-lg;
+  }
+
+  .blog-content :global(p) {
+    @apply text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4;
+  }
+
+  .blog-content :global(a) {
+    @apply text-amber-500 hover:text-amber-600 underline;
+  }
+
+  .blog-content :global(ul),
+  .blog-content :global(ol) {
+    @apply my-4 pl-6 text-zinc-700 dark:text-zinc-300;
+  }
+
+  .blog-content :global(li) {
+    @apply mb-2;
+  }
+
+  .blog-content :global(ul) {
+    @apply list-disc;
+  }
+
+  .blog-content :global(ol) {
+    @apply list-decimal;
+  }
+
+  .blog-content :global(code) {
+    @apply bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-sm;
+  }
+
+  .blog-content :global(pre) {
+    @apply bg-zinc-900 dark:bg-zinc-800 p-4 rounded-lg overflow-x-auto my-4;
+  }
+
+  .blog-content :global(pre code) {
+    @apply bg-transparent p-0;
+  }
+
+  .blog-content :global(blockquote) {
+    @apply border-l-4 border-amber-500 pl-4 italic text-zinc-600 dark:text-zinc-400 my-4;
+  }
+
+  .blog-content :global(strong) {
+    @apply font-semibold text-zinc-900 dark:text-zinc-100;
+  }
+
+  .blog-content :global(hr) {
+    @apply my-8 border-zinc-200 dark:border-zinc-700;
+  }
+</style>

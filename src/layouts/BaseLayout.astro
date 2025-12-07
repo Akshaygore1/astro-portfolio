@@ -1,0 +1,79 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "Akshay Gore - Software Engineer",
+  description = "Full-stack engineer building enterprise and SaaS products",
+  image = "/og-page.webp"
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+  </head>
+  <body class="min-h-screen p-4 dark:bg-[#090A0B] dark:text-[#BBBBBB]">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: 'Graphik';
+    src: url('/font/graphik-font.woff2') format('woff2');
+  }
+
+  * {
+    font-family: 'Graphik', sans-serif;
+  }
+</style>
+
+<script is:inline>
+  // Theme initialization - runs before page renders to prevent flash
+  const theme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+    return 'light';
+  })();
+
+  if (theme === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+
+  // Make theme available globally for toggle
+  window.getTheme = () => document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  window.toggleTheme = () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  };
+</script>
