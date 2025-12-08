@@ -1,11 +1,11 @@
 ---
-title: "Redis‑Based Rate Limiting in Node.js (Express + TypeScript)"
+title: "Redis‑Based Rate Limiting in Node.js (Express + Redis)"
 description: "Step‑by‑step guide to adding Redis‑powered rate‑limiting middleware to a Node.js Express API written in TypeScript."
 pubDate: 2024-06-15
 author: "Akshay Gore"
 tags: ["node.js", "typescript", "express", "redis", "rate-limiting", "api"]
 image:
-  url: "https://pub-787f86ca67424ee9bb7d256ad6da8565.r2.dev/rate-limit.webp"
+  url: "https://pub-787f86ca67424ee9bb7d256ad6da8565.r2.dev/Indexing.webp"
   alt: "A screenshot Redis‑Based Rate Limiting in Node.js"
 ---
 
