@@ -7,13 +7,19 @@ import { links } from '../../data';
 const skills = [
   'Next.js',
   'React.js',
+  'TypeScript',
   'Node.js',
+  'Nest.js',
+  'GraphQL',
+  'PostgreSQL',
+  'MongoDB',
+  'Redis',
   'Docker',
   'Kubernetes',
-  'Cloud',
-  'PostgreSQL',
-  'ClickHouse',
-  'GenAI',
+  'AWS',
+  'LangChain',
+  'OpenAI API',
+  'RAG',
 ];
 
 const experiences = [
@@ -36,7 +42,6 @@ const experiences = [
   <Navbar />
   <main class="pt-8">
     <div class="max-w-lg mx-auto flex flex-col gap-4">
-      <div class="w-full min-h-10"></div>
       <div>
         <h1 class="text-xl font-medium dark:text-gray-50">
           hey, I'm Akshay Gore 👋
@@ -61,9 +66,9 @@ const experiences = [
         <h2 class="text-xl font-medium text-zinc-900 dark:text-zinc-100">
           Skills
         </h2>
-        <div class="flex flex-wrap gap-3">
+        <div class="flex flex-wrap gap-2">
           {skills.map((skill) => (
-            <span class="px-3 py-1 rounded-full text-sm font-medium border transition-all duration-200 hover:scale-105">
+            <span class="p-1 text-sm">
               {skill}
             </span>
           ))}
